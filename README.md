@@ -1,27 +1,21 @@
-# AngularListOfProducts
+Задание 1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+Создайте компонент my-table, который будет отображать данные в виде таблицы.
+Информация для отображения:
 
-## Development server
+Products = [{ id: 1, name : “product 1”, price : 100 },
+{ id: 2, name : “product 2”, price : 200 },
+{ id: 3, name : “product 3”, price : 300 },
+{ id: 4, name : “product 4”, price : 400 },
+{ id: 5, name : “product 5”, price : 500 },
+{ id: 6, name : “product 6”, price : 600 },
+{ id: 7, name : “product 7”, price : 700 }
+{ id: 8, name : “product 8”, price : 800 }
+{ id: 9, name : “product 9”, price : 900 }
+{ id: 10, name : “product 10”, price : 1000 }];
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Данные должны выводиться в три столбца. Компонент должен использовать параметр rows с
+помощью, которого можно установить количество строк, которые отображаются в таблице.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Например: <my-table rows=”3”></my-table> при, таком использовании, в таблице должны
+отображаться первые три строки.
