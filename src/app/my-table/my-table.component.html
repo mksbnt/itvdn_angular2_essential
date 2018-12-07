@@ -1,3 +1,8 @@
-<p>
-  my-table works!
-</p>
+<table>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.name | uppercase }}</td>
+    <td>{{ product.price }}</td>
+  </tr>
+</table>
+
