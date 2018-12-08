@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MyTableComponent } from './my-table/my-table.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { MyTableComponent } from './my-table/my-table.component';
     MyTableComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

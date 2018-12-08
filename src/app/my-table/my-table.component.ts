@@ -18,6 +18,11 @@ export class MyTableComponent implements OnInit {
 
   products = PRODUCTS;
 
+  delete(i){
+    console.log("id: " + this.products[i].id);
+    this.products.splice(i,1);
+}
+
   constructor() { }
 
   ngOnInit() {

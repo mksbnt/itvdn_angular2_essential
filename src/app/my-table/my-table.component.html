@@ -1,8 +1,12 @@
 <table class="table table-stripped">
   <tr *ngFor="let product of products| slice:0:3; let i = index">
-    <td>{{ product.id }}</td>
-    <td>{{ product.name | uppercase }}</td>
-    <td>{{ product.price }}</td>
+    <td class="col-1">{{ product.id }}</td>
+    <td class="col-8">{{ product.name | uppercase }}</td>
+    <td class="col-2">{{ product.price }}</td>
+    <td class="col-1">
+      <button class="btn" (click)="delete(i)">
+        <fa name="trash"></fa>
+      </button>
+    </td>
   </tr>
 </table>
-
