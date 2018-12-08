@@ -23,6 +23,17 @@ export class MyTableComponent implements OnInit {
     this.products.splice(i,1);
 }
 
+  // isBgDanger: boolean = true;
+  isBgDanger(i){
+    if(this.products[i].price > 500){
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+
   constructor() { }
 
   ngOnInit() {
