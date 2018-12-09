@@ -22,6 +22,8 @@
     </div>
   </div>
 
+  
+
 <table class="table table-stripped">
   <div [ngSwitch]="choice">
     <div *ngSwitchDefault>
@@ -29,7 +31,8 @@
         *ngFor="let product of (products | slice: 0:6); let i = index"
         [class.bg-danger]="isBgDanger(i)">
         <td class="col-1">{{ product.id }}</td>
-        <td class="col-8">{{ product.name | uppercase }}</td>
+        <td class="col-4">{{ product.name | uppercase }}</td>
+        <td class="col-4"><ngb-rating [(rate)]="product.currentRate"></ngb-rating></td>
         <td class="col-2">{{ product.price }}</td>
         <td class="col-1"><button class="btn" (click)="delete(i)"><fa name="trash"></fa></button></td>
       </tr>

@@ -12,7 +12,8 @@ export class MyTableComponent implements OnInit {
     id: 1,
     name: "product 1",
     price: 100,
-    category: 1
+    category: 1,
+    currentRate: 2
   };
 
   products = PRODUCTS;
