@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Product } from "../../product";
-import { PRODUCTS } from "../../productsList";
+import { Product } from "../product";
+import { DataService } from "../data.service";
 
 @Component({
   selector: "app-my-table",
@@ -8,15 +8,8 @@ import { PRODUCTS } from "../../productsList";
   styleUrls: ["./my-table.component.css"]
 })
 export class MyTableComponent implements OnInit {
-  product: Product = {
-    id: 1,
-    name: "product 1",
-    price: 100,
-    category: 1,
-    currentRate: 2
-  };
-
-  products = PRODUCTS;
+  
+  products: Product[];
 
   delete(i) {
     console.log("id: " + this.products[i].id);
@@ -69,7 +62,13 @@ export class MyTableComponent implements OnInit {
     return (this.choice = 3);
   }
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getProducts();
+  }
+  
+  getProducts(): void {
+    this.products = this.dataService.getProducts();
+  }
 }
