@@ -1,14 +1,75 @@
-<table class="table table-stripped">
-  <tr *ngFor="let product of products| slice:0:6; let i = index" [class.bg-danger]="isBgDanger(i)">
-    <td class="col-1">{{ product.id }}</td>
-    <td class="col-8">{{ product.name | uppercase }}</td>
-    <td class="col-2">{{ product.price }}</td>
-    <td class="col-1">
-      <button class="btn" (click)="delete(i)">
-        <fa name="trash"></fa>
-      </button>
-    </td>
-  </tr>
-</table>
+<div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle>
+          Category
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item" (click)="switchCase1()">
+            Category 1
+          </button>
+          <button class="dropdown-item" (click)="switchCase2()">
+            Category 2
+          </button>
+          <button class="dropdown-item" (click)="switchCase3()">
+            Category 3
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- class="bg-danger" -->
+<table class="table table-stripped">
+  <div [ngSwitch]="choice">
+    <div *ngSwitchDefault>
+      <tr
+        *ngFor="let product of (products | slice: 0:6); let i = index"
+        [class.bg-danger]="isBgDanger(i)">
+        <td class="col-1">{{ product.id }}</td>
+        <td class="col-8">{{ product.name | uppercase }}</td>
+        <td class="col-2">{{ product.price }}</td>
+        <td class="col-1"><button class="btn" (click)="delete(i)"><fa name="trash"></fa></button></td>
+      </tr>
+    </div>
+    <div *ngSwitchCase="1">
+      <tr
+        *ngFor="let product of (products | slice: 0:6); let i = index"
+        [class.bg-danger]="isBgDanger(i)">
+        <div *ngIf="showCategory1(i)">
+          <td class="col-1">{{ product.id }}</td>
+          <td class="col-8">{{ product.name | uppercase }}</td>
+          <td class="col-2">{{ product.price }}</td>
+          <td class="col-1"><button class="btn" (click)="delete(i)"><fa name="trash"></fa></button></td>
+        </div>
+      </tr>
+    </div>
+    <div *ngSwitchCase="2">
+      <tr
+        *ngFor="let product of (products | slice: 0:6); let i = index"
+        [class.bg-danger]="isBgDanger(i)">
+        <div *ngIf="showCategory2(i)">
+          <td class="col-1">{{ product.id }}</td>
+          <td class="col-8">{{ product.name | uppercase }}</td>
+          <td class="col-2">{{ product.price }}</td>
+          <td class="col-1"><button class="btn" (click)="delete(i)"><fa name="trash"></fa></button></td>
+        </div>
+      </tr>
+    </div>
+    <div *ngSwitchCase="3">
+      <tr
+        *ngFor="let product of (products | slice: 0:6); let i = index"
+        [class.bg-danger]="isBgDanger(i)">
+        <div *ngIf="showCategory3(i)">
+          <td class="col-1">{{ product.id }}</td>
+          <td class="col-8">{{ product.name | uppercase }}</td>
+          <td class="col-2">{{ product.price }}</td>
+          <td class="col-1"><button class="btn" (click)="delete(i)"><fa name="trash"></fa></button>
+          </td>
+        </div>
+      </tr>
+    </div>
+  </div>
+</table>
